@@ -19,14 +19,14 @@ use libnov::constant::*;
 use libnov::file;
 
 fn main() {
-    println!("Starting Nov.");
+    println!("Starting Nov...");
 
     let mut file_content = Vec::<u8>::new();
 
     let (filename, _file_prefixes) = file::read(
         &mut file_content,
-        Some(PROJECT_FILENAME),
-        Some(PROJECT_FILE_PREFIXES.to_vec()),
+        Some(GET_PATH_PROJECT_FILENAME),
+        Some(GET_PATH_PROJECT_FILE_PREFIXES.to_vec()),
     )
     .unwrap();
 
