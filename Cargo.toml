@@ -34,7 +34,6 @@ gl = ["libnov/gl"]
 dx11 = ["libnov/dx11"]
 dx12 = ["libnov/dx12"]
 vulkan = ["libnov/vulkan"]
-empty = ["libnov/empty"]
 unstable = []
 
 [workspace]

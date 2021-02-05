@@ -19,15 +19,13 @@
 #
 #   ../libnov/cmd/load-image
 #
-# It defaults to the vulkan backend, but you can change it
-# to any one of these others instead if you prefer and it's
-# supported by your OS:
+# You can change the gfx-hal backend to any of these:
 #
-#   gl, dx12, dx11, metal, empty
+#   vulkan, gl, dx12, dx11, metal, empty
 #
 # This is how you change it to OpenGL for example:
 #
-#   ./load-image.sh --features gl
+#   cargo run -p libnov --features gl
 #
 
-cargo run -p libnov $@
+cargo run -p libnov --features vulkan --color always $@
