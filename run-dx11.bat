@@ -24,4 +24,5 @@ rem
 rem   cargo run --features gl
 rem
 
+cmd /C "set pwd=%dir%&& cd ..\nob && .\build.bat %* && cd %pwd%"
 cmd /C "set CARGO_TARGET_DIR=target-dx11&& cargo run --features dx11 --color always %*"

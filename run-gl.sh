@@ -24,4 +24,9 @@
 #   cargo run --features gl
 #
 
+pwd="$PWD"
+cd ../nob
+./build.sh $@
+cd "$pwd"
+
 CARGO_TARGET_DIR=target-gl cargo run --features gl --color always $@

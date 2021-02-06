@@ -24,4 +24,5 @@ rem
 rem   cargo run --features gl
 rem
 
-cmd /C "set CARGO_TARGET_DIR=target-win&& cargo run --features vulkan --color always %*"
+cmd /C "set pwd=%dir%&& cd ..\nob && .\build.bat %* && cd %pwd%"
+cargo run --features vulkan --color always %*

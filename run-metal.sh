@@ -24,4 +24,9 @@
 #   cargo run --features gl
 #
 
-CARGO_TARGET_DIR=target-metal cargo run --features metal --color always $@
+pwd="$PWD"
+cd ../nob
+./build.sh $@
+cd "$pwd"
+
+cargo run --features metal --color always $@

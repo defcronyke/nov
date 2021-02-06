@@ -24,4 +24,9 @@
 #   cargo run --features gl
 #
 
+pwd="$PWD"
+cd ../nob
+./build.sh $@
+cd "$pwd"
+
 cargo run --features vulkan --color always $@

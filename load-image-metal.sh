@@ -28,4 +28,4 @@
 #   cargo run -p libnov --features gl
 #
 
-CARGO_TARGET_DIR=target-metal cargo run -p libnov --features metal --color always $@
+cargo run -p libnov --features metal --color always $@
