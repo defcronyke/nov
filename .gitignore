@@ -14,4 +14,9 @@
 # terms from all of the different technologies apply, with
 # this project's license terms taking first priority.
 /target
+/target-gl
+/target-dx12
+/target-dx11
+/target-metal
+/target-empty
 Cargo.lock

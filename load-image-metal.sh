@@ -15,13 +15,17 @@
 # terms from all of the different technologies apply, with
 # this project's license terms taking first priority.
 
+# Runs this test program to check if gfx-hal is working:
+#
+#   ../libnov/cmd/load-image
+#
 # You can change the gfx-hal backend to any of these:
 #
 #   vulkan, gl, dx12, dx11, metal, empty
 #
 # This is how you change it to OpenGL for example:
 #
-#   cargo run --features gl
+#   cargo run -p libnov --features gl
 #
 
-CARGO_TARGET_DIR=target-gl cargo run --features gl --color always $@
+CARGO_TARGET_DIR=target-metal cargo run -p libnov --features metal --color always $@

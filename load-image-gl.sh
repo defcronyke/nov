@@ -28,4 +28,4 @@
 #   cargo run -p libnov --features gl
 #
 
-cargo run -p libnov --features gl --color always $@
+CARGO_TARGET_DIR=target-gl cargo run -p libnov --features gl --color always $@
