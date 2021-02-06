@@ -24,4 +24,4 @@ rem
 rem   cargo run --features gl
 rem
 
-cargo run --features vulkan --color always %*
+cmd /C "set CARGO_TARGET_DIR=target-win&& cargo run --features vulkan --color always %*"
