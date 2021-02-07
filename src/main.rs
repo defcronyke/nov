@@ -15,9 +15,7 @@
     this project's license terms taking first priority.
 */
 use libnov;
-use libnov::conf::*;
-use libnov::constant::*;
-use libnov::{conf, file};
+use libnov::{conf, conf::*, constant::*, file};
 
 fn main() {
     println!("Starting Nov...");
