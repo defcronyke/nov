@@ -33,9 +33,7 @@ to specify which image to load, otherwise a default image will be loaded.\n"
             Some(GET_PATH_PROJECT_FILE_PREFIXES.to_vec()),
         )?;
 
-        let c: NovConf = conf::load(None)?;
-
-        println!("using config:\n{}", &c);
+        let _c: NovConf = conf::load(None)?;
 
         window::open_image(res.clone());
 
