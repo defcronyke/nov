@@ -15,10 +15,14 @@
     this project's license terms taking first priority.
 */
 use libnov;
-use libnov::{conf, conf::*, constant::*, file};
+use libnov::{conf, conf::*, constant::*, file, window};
 
 fn main() {
     println!("Starting Nov...");
+    println!(
+        "\nYou can run this with a filename as the first argument \
+to specify which image to load, otherwise a default image will be loaded.\n"
+    );
 
     let res = libnov::main(Ok(()), |res| {
         let mut file_content = Vec::<u8>::new();
@@ -37,6 +41,8 @@ fn main() {
         let c: Conf = conf::load(None);
 
         println!("config file:\n{}", &c);
+
+        window::open_image(res.clone());
 
         res
     });
