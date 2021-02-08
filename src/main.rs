@@ -25,6 +25,8 @@ to specify which image to load, otherwise a default image will be loaded.\n"
     );
 
     let res = libnov::main(Ok(()), |res| {
+        let _c: NovConf = conf::load(None)?;
+
         let mut file_content = Vec::<u8>::new();
 
         let (_filename, _file_prefixes) = file::read(
@@ -32,8 +34,6 @@ to specify which image to load, otherwise a default image will be loaded.\n"
             Some(GET_PATH_PROJECT_FILENAME),
             Some(GET_PATH_PROJECT_FILE_PREFIXES.to_vec()),
         )?;
-
-        let _c: NovConf = conf::load(None)?;
 
         window::open_image(res.clone());
 
