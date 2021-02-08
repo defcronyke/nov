@@ -14,7 +14,7 @@
     terms from all of the different technologies apply, with
     this project's license terms taking first priority.
 */
-use libnov;
+
 use libnov::{conf, conf::*, constant::*, file, window};
 
 fn main() {
@@ -27,20 +27,15 @@ to specify which image to load, otherwise a default image will be loaded.\n"
     let res = libnov::main(Ok(()), |res| {
         let mut file_content = Vec::<u8>::new();
 
-        let (filename, _file_prefixes) = file::read(
+        let (_filename, _file_prefixes) = file::read(
             &mut file_content,
             Some(GET_PATH_PROJECT_FILENAME),
             Some(GET_PATH_PROJECT_FILE_PREFIXES.to_vec()),
-        )
-        .unwrap();
+        )?;
 
-        if file_content.len() > 0 {
-            println!("file loaded: {}", filename);
-        }
+        let c: NovConf = conf::load(None)?;
 
-        let c: Conf = conf::load(None);
-
-        println!("config file:\n{}", &c);
+        println!("using config:\n{}", &c);
 
         window::open_image(res.clone());
 

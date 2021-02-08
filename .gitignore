@@ -18,3 +18,4 @@
 /target-dx12
 /target-dx11
 Cargo.lock
+conf.yaml
