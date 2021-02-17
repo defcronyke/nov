@@ -35,6 +35,7 @@ dx11 = ["libnov/dx11"]
 dx12 = ["libnov/dx12"]
 vulkan = ["libnov/vulkan"]
 unstable = []
+python = ["libnov/python"]
 
 [workspace]
 members = [

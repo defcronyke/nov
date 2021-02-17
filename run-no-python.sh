@@ -29,4 +29,4 @@ cd ../nob
 ./build.sh $@
 cd "$pwd"
 
-cargo run --features vulkan,python --color always $@
+cargo run --features vulkan --color always $@

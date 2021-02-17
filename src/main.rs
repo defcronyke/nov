@@ -15,7 +15,7 @@
     this project's license terms taking first priority.
 */
 
-use libnov::{conf, window::*};
+use libnov::{conf, view::*, window::*};
 
 fn main() {
     println!(
@@ -27,7 +27,24 @@ a default image will be loaded.
 "
     );
 
-    let res = libnov::main(Ok(()), |res| {
+    let res = libnov::main(Ok(()), |view: &mut View, res| {
+        println!("{} is available.", view.get_name());
+
+        #[cfg(feature = "python")]
+        {
+            let py = view.python.acquire_gil();
+
+            py.import("sys").unwrap();
+
+            py.eval(
+                "print('!!!!!!!!!!!! HELLO PYTHON !!!!!!!!!!!!')",
+                None,
+                None,
+            )
+            .unwrap();
+        }
+
+        // This must run last.
         Window::new(conf::load(None)?).open_image(res.clone());
 
         res
