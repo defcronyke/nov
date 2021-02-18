@@ -29,4 +29,6 @@ cd ../nob
 ./build.sh $@
 cd "$pwd"
 
+LIBPYTHON_DIR="$(pyenv prefix)/lib" \
+LIBPYTHON_NAME=$(basename $(ls -1t $(pyenv prefix)/lib/libpython* | head -n 1) | sed 's/lib//' | sed 's/\.a//') \
 cargo run --features vulkan,python --color always $@

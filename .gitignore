@@ -19,3 +19,4 @@
 /target-dx11
 Cargo.lock
 conf.yaml
+.python-version
