@@ -2,6 +2,18 @@
 rustc-link-search = ["native={LIBPYTHON_DIR}"]
 rustc-link-lib = ["static={LIBPYTHON_NAME}"]
 
+[target.x86_64-unknown-linux-gnu.python3-sys]
+rustc-link-search = ["native={LIBPYTHON_DIR}"]
+rustc-link-lib = ["static={LIBPYTHON_NAME}"]
+
+[target.x86_64-unknown-linux-gnu.cpython]
+rustc-link-search = ["native={LIBPYTHON_DIR}"]
+rustc-link-lib = ["static={LIBPYTHON_NAME}"]
+
+[target.x86_64-unknown-linux-gnu.pyembed]
+rustc-link-search = ["native={LIBPYTHON_DIR}"]
+rustc-link-lib = ["static={LIBPYTHON_NAME}"]
+
 [target.x86_64-unknown-linux-gnu.libnov]
 rustc-link-search = ["native={LIBPYTHON_DIR}"]
 rustc-link-lib = ["static={LIBPYTHON_NAME}"]
