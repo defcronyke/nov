@@ -1,3 +1,11 @@
 [target.x86_64-unknown-linux-gnu.pythonXY]
 rustc-link-search = ["native={LIBPYTHON_DIR}"]
 rustc-link-lib = ["static={LIBPYTHON_NAME}"]
+
+[target.x86_64-unknown-linux-gnu.libnov]
+rustc-link-search = ["native={LIBPYTHON_DIR}"]
+rustc-link-lib = ["static={LIBPYTHON_NAME}"]
+
+[target.x86_64-unknown-linux-gnu.nov]
+rustc-link-search = ["native={LIBPYTHON_DIR}"]
+rustc-link-lib = ["static={LIBPYTHON_NAME}"]
