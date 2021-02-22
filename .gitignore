@@ -17,7 +17,7 @@
 /target-gl
 /target-dx12
 /target-dx11
-/.cargo/config
+.cargo/config
 Cargo.lock
 conf.yaml
 .python-version
