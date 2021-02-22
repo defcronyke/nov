@@ -31,6 +31,7 @@ cd "$pwd"
 
 export LIBPYTHON_DIR="$(pyenv prefix)/lib"
 export LIBPYTHON_NAME="$(basename $(ls -1t $(pyenv prefix)/lib/libpython* | head -n 1) | sed 's/lib//' | sed 's/\.a//')"
+# export LIBPYTHON_NAME="$(basename $(ls -1t $(pyenv prefix)/lib/libpython* | head -n 1))"
 
 cat ".cargo/config.tmpl" | \
 sed "s@{LIBPYTHON_DIR}@$LIBPYTHON_DIR@g" | \
