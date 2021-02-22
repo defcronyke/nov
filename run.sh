@@ -29,6 +29,12 @@ cd ../nob
 ./build.sh $@
 cd "$pwd"
 
-LIBPYTHON_DIR="$(pyenv prefix)/lib" \
-LIBPYTHON_NAME=$(basename $(ls -1t $(pyenv prefix)/lib/libpython* | head -n 1) | sed 's/lib//' | sed 's/\.a//') \
+export LIBPYTHON_DIR="$(pyenv prefix)/lib"
+export LIBPYTHON_NAME="$(basename $(ls -1t $(pyenv prefix)/lib/libpython* | head -n 1) | sed 's/lib//' | sed 's/\.a//')"
+
+cat ".cargo/config.tmpl" | \
+sed "s@{LIBPYTHON_DIR}@$LIBPYTHON_DIR@g" | \
+sed "s@{LIBPYTHON_NAME}@$LIBPYTHON_NAME@g" | \
+tee ".cargo/config"
+
 cargo run --features vulkan,python --color always $@
