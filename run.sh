@@ -34,9 +34,9 @@ export PYTHON_SYS_EXECUTABLE="$(pyenv which python)"
 export LIBPYTHON_DIR="$(pyenv prefix)/lib"
 export LIBPYTHON_NAME="$(basename $(ls -1t $(pyenv prefix)/lib/libpython*.a | head -n 1) | sed 's/lib//' | sed 's/\.a//')"
 
-cat ".cargo/config.tmpl" | \
-sed "s@{LIBPYTHON_DIR}@$LIBPYTHON_DIR@g" | \
-sed "s@{LIBPYTHON_NAME}@$LIBPYTHON_NAME@g" | \
-tee ".cargo/config"
+# cat ".cargo/config.tmpl" | \
+# sed "s@{LIBPYTHON_DIR}@$LIBPYTHON_DIR@g" | \
+# sed "s@{LIBPYTHON_NAME}@$LIBPYTHON_NAME@g" | \
+# tee ".cargo/config"
 
 cargo run --features vulkan,python --color always $@
