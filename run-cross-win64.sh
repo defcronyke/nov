@@ -42,7 +42,9 @@ cp python39.dll python3.9.dll ../target-cross-win64/x86_64-pc-windows-gnu/debug/
 
 cd ..
 
-export PYO3_CROSS_INCLUDE_DIR="/usr/include/python3.9"
+# export PYO3_CROSS_INCLUDE_DIR="/usr/include/python3.9"
+
+export PYO3_CROSS_INCLUDE_DIR="$(pyenv prefix)/include/python3.9"
 export PYO3_CROSS_LIB_DIR="$PWD/python-cross-win64"
 
 export PYTHONHOME="$PWD/python-cross-win64/Python-3.9.1"
