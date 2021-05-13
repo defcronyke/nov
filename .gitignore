@@ -17,6 +17,8 @@
 /target-gl
 /target-dx12
 /target-dx11
+/target-cross-win64
+/python-cross-win64
 .cargo/config
 Cargo.lock
 conf.yaml
