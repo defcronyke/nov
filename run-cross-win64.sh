@@ -33,18 +33,19 @@ if [ ! -d "Python-3.9.1" ]; then
   echo "Installing win64 version of Python for cross-compiling."
   wget "https://www.python.org/ftp/python/3.9.1/Python-3.9.1.tar.xz"
   wget "https://www.python.org/ftp/python/3.9.1/python-3.9.1-embed-amd64.zip"
-  tar xvf Python-3.9.1.tar.xz
+  tar xf Python-3.9.1.tar.xz
   unzip python-3.9.1-embed-amd64.zip
   cp python39.dll python3.9.dll
 fi
+
+mkdir -p ../target-cross-win64/x86_64-pc-windows-gnu/debug/
 
 cp python39.dll python3.9.dll ../target-cross-win64/x86_64-pc-windows-gnu/debug/
 
 cd ..
 
-# export PYO3_CROSS_INCLUDE_DIR="/usr/include/python3.9"
-
-export PYO3_CROSS_INCLUDE_DIR="$(pyenv prefix)/include/python3.9"
+# export PYO3_CROSS_INCLUDE_DIR="$(pyenv prefix)/include/python3.9"
+export PYO3_CROSS_INCLUDE_DIR="/usr/include/python3.9"
 export PYO3_CROSS_LIB_DIR="$PWD/python-cross-win64"
 
 export PYTHONHOME="$PWD/python-cross-win64/Python-3.9.1"
