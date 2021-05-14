@@ -29,4 +29,4 @@ cd ../nob
 ./build.sh $@
 cd "$pwd"
 
-cargo run --features vulkan --color always $@
+RUST_BACKTRACE=full CARGO_TARGET_DIR=target-no-python cargo run --features vulkan --color always $@

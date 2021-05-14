@@ -31,6 +31,8 @@ cd "$pwd"
 
 export PYTHON_SYS_EXECUTABLE="$(pyenv which python)"
 
+export PYTHONPATH="$PWD/../libnov/data/src:$PYTHONPATH"
+
 # export LIBPYTHON_DIR="$(pyenv prefix)/lib"
 # export LIBPYTHON_NAME="$(basename $(ls -1t $(pyenv prefix)/lib/libpython*.a | head -n 1) | sed 's/lib//' | sed 's/\.a//')"
 
@@ -39,4 +41,4 @@ export PYTHON_SYS_EXECUTABLE="$(pyenv which python)"
 # sed "s@{LIBPYTHON_NAME}@$LIBPYTHON_NAME@g" | \
 # tee ".cargo/config"
 
-cargo run --features vulkan,python --color always $@
+RUST_BACKTRACE=full cargo run --features vulkan,python --color always $@

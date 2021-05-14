@@ -15,6 +15,7 @@
 # this project's license terms taking first priority.
 /target
 /target-gl
+/target-no-python
 /target-dx12
 /target-dx11
 /target-cross-win64

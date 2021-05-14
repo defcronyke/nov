@@ -28,21 +28,18 @@ a default image will be loaded.
     );
 
     let res = libnov::main(Ok(()), |view: &mut View, res| {
-        println!("{} is available.", view.get_name());
+        let view_name = view.get_name();
 
-        // #[cfg(feature = "python")]
-        // {
-        //     let py = view.python.acquire_gil();
+        println!("[ {} available ]\n", view_name);
 
-        //     py.import("sys").unwrap();
-
-        //     py.eval(
-        //         "print('!!!!!!!!!!!! HELLO PYTHON !!!!!!!!!!!!')",
-        //         None,
-        //         None,
-        //     )
-        //     .unwrap();
-        // }
+        #[cfg(feature = "python")]
+        if view.feature_python.is_some() {
+            println!(
+                "[ {} feature available ]: {}",
+                view_name,
+                view.feature_python.as_ref().unwrap()
+            );
+        }
 
         // This must run last.
         Window::new(conf::load(None)?).open_image(res.clone());
