@@ -48,10 +48,20 @@ cd ..
 export PYO3_CROSS_INCLUDE_DIR="/usr/include/python3.9"
 export PYO3_CROSS_LIB_DIR="$PWD/python-cross-win64"
 
+export PYTHON_SYS_EXECUTABLE="$PWD/python-cross-win64/python.exe"
 export PYTHONHOME="$PWD/python-cross-win64/Python-3.9.1"
+
+# NOTE: On Windows (or maybe just Wine), python will only check one PYTHONPATH.
+# So we symlink our module to that location.
+cd python-cross-win64/Python-3.9.1
+ln -sf ../../../libnov/data/src/nov
+cd ../..
+
 export PYTHONPATH="$PWD/python-cross-win64/Python-3.9.1"
 
-export PYTHON_SYS_EXECUTABLE="$PWD/python-cross-win64/python.exe"
+# export PYTHONPATH="$PWD/../libnov/data/src"
+# export PYTHONPATH="$PWD/python-cross-win64/Python-3.9.1:$PWD/../libnov/data/src:$PYTHONPATH"
+
 
 # cat ".cargo/config.tmpl" | \
 # sed "s@{LIBPYTHON_DIR}@$LIBPYTHON_DIR@g" | \
