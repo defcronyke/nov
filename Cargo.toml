@@ -42,5 +42,8 @@ members = [
     "../libnov",
 ]
 
+[[bin]]
+name = "nov"
+
 [dependencies]
 libnov = { path = "../libnov", version = "0.1" }
